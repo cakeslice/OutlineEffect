@@ -454,6 +454,18 @@ namespace cakeslice
 #endif
 		}
 
+		//Use when performing dynamic processing
+		public void AddOutline(GameObject go)
+		{
+			var outline = go.AddComponent<Outline>();
+			bool isRendererEnabled = outline.Renderer.enabled;
+			if (isRendererEnabled)
+			{
+			    outline.Renderer.enabled = false;
+			    outline.Renderer.enabled = true;
+			}
+		}
+
 		public void AddOutline(Outline outline)
 			 => outlines.Add(outline);
 
