@@ -454,6 +454,18 @@ namespace cakeslice
 #endif
 		}
 
+		public void ClearAllOutlines()
+		{
+			foreach (var outline in outlines.ToList())
+			{
+			    if (outline != null)
+			    {
+				Destroy(outline.gameObject.GetComponent<Outline>());
+			    }
+			}
+			outlines.Clear();
+		}
+
 		public void AddOutline(Outline outline)
 			 => outlines.Add(outline);
 
